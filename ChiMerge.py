@@ -130,7 +130,9 @@ def chimerge(feature, data, max_interval):
     #是否满足最大间隔
     while num_intervals > max_interval: 
         #相邻列的卡方值
-        chi2_df = update_chi2_column(contingency_table,feature) 
+        chi2_df = update_chi2_column(contingency_table,feature)
+        print('---chi2_df---')
+        print(chi2_df)
         contingency_table = merge_rows(chi2_df,feature)
         num_intervals= contingency_table.shape[0]               
 
